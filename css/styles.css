@@ -340,13 +340,254 @@ body button:active {
   fill: var(--hover-color);
   background-color: var(--background-color);
   transform: transition;
-
-  }
+}
 
 .icon-close {
   fill: currentColor;
 
   object-position: center;
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 528px;
+  min-height: 581px;
+
+  padding: 40px;
+  margin: 0;
+}
+
+.modal-container .modal-title {
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-align: center;
+
+  color: var(--main-color);
+
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.form-field {
+  display: block;
+  position: relative;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+.form-field:not(:last-child) {
+margin-bottom: 28px;
+}
+
+.form-input {
+  position: relative;
+  width: 448px;
+  height: 40px;
+
+  padding-left: 42px;
+
+  border-radius: 4px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+
+  transition: border 250ms var(--cube);
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-align: left;
+
+  color: var(--main-color);
+
+  cursor: pointer;
+}
+
+.form-field .form-input:hover,
+.form-field .form-input:focus {
+  border: 1px solid var(--hover-color);
+}
+
+.form-field .label-name {
+  position: absolute;
+  top: -15px;
+  left: 0;
+
+  color: rgba(117, 117, 117, 1);
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+.form-field .label-icon {
+  position: absolute;
+  left: 12px;
+  top: 14px;
+
+  fill: rgba(33, 33, 33, 1);
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cube);
+}
+
+.form-input:focus ~ .label-icon,
+.form-input:hover ~ .label-icon {
+  fill: var(--hover-color);
+}
+
+.form-field .text-input {
+  padding-top: 12px;
+  padding-left: 12px;
+
+  width: 448px;
+  height: 120px;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cube);
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-align: left;
+
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+.form-field .text-input::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+.form-field .text-input:hover,
+.form-field .text-input:focus {
+  border-color: var(--hover-color);
+}
+
+.field-checkbox {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  text-align: left;
+
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.field-checkbox .browser-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.field-checkbox .custom-chechbox {
+  position: absolute;
+  left: 10px;
+  top: 3px;
+
+  border: 2px solid var(--main-color);
+  border-radius: 2px;
+  width: 16px;
+  height: 15px;
+
+  margin-right: 7px;
+
+  cursor: pointer;
+
+  transition-property: border-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cube);
+}
+
+.field-checkbox .browser-checkbox:checked + .custom-chechbox {
+  background-image: url(../images/icon-check.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-size: cover;
+  object-fit: fill;
+
+  border-color: var(--hover-color);
+
+  fill: var(--hover-color);
+}
+
+.field-checkbox .agreement {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  margin-left: 36px;
+}
+
+.field-checkbox .policy-agreement {
+  text-decoration: underline;
+  color: var(--hover-color);
+}
+
+.submit-button {
+  display: block;
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+  text-align: center;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 55px;
+  padding-right: 55px;
+
+  background-color: var(--hover-color);
+  color: var(--background-color);
+
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .skills {
@@ -1003,6 +1244,7 @@ color: #212121;
 
 .container-div {
   margin-right: 70px;
+  padding-right: 11px;
 }
 
 .footer-subscription {
@@ -1065,3 +1307,100 @@ color: #212121;
   background: var(--hover-color);
   transform: transition;
 }
+
+.footer-signup {
+  width: auto;
+  margin-left: 0px;
+  margin-right: auto;
+  margin-top: 12px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-signup .title {
+  font-family: inherit;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 15px;
+}
+
+.signup-form {
+  position: relative;
+  align-items: center;
+}
+
+.signup-form input {
+  position: relative;
+  margin-right: 12px;
+  padding-left: 16px;
+
+  width: 358px;
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(47, 48, 58, 1);
+  color: var(--background-color);
+
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+  transition: border 250ms var(--cube);
+
+  cursor: pointer;
+}
+
+.signup-form input:hover,
+.signup-form input:focus {
+  border: 1px solid var(--hover-color);
+}
+
+.signup-form .signup-button {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  margin: 0;
+  padding-left: 29px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 28px;
+  background-color: var(--hover-color);
+  color: var(--background-color);
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+  text-align: left;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.signup-button::after {
+  content: "";
+  position: absolute;
+  top: 13px;
+  right: 28px;
+  width: 24px;
+  height: 24px;
+  background-image: url(../images/icon-send.svg);
+  background-repeat: no-repeat;
+}
+
+.signup-button .icon-send {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  fill: var(--background-color);
+}
+
