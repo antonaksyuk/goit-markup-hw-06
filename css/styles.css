@@ -135,7 +135,7 @@ body button:active {
 .navigation .current::after {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -1.3px;
 
   content: "";
 
@@ -248,14 +248,17 @@ body button:active {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-/* скрытие заголовка
+скрытие заголовка
 .visually-hidden {
   position: absolute;
-  clip: rect(0 0 0 0);
   width: 1px;
   height: 1px;
-  margin: 1px;
-} */
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 
 .overlay {
   height: 600px;
@@ -292,7 +295,7 @@ body button:active {
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 
 .backdrop.is-hidden .modal {
@@ -992,7 +995,7 @@ margin-bottom: 28px;
   text-decoration: none;
   color: inherit;
 
-  transition-property: background, box-shadow;
+  transition-property: box-shadow;
   transition-duration: 250ms;
   transition-timing-function: var(--cube);
 }
@@ -1066,8 +1069,8 @@ margin-bottom: 28px;
   color: var(--background-color);
  }
 
-.project-all:hover .project-popup,
-.project-all:focus .project-popup {
+.project-all a:hover .project-popup,
+.project-all a:focus .project-popup {
   transform: translateY(0);
   opacity: 1;
 }
@@ -1111,7 +1114,7 @@ color: #212121;
   border-radius: 4px;
   overflow: hidden;
   fill: #AFB1B8;
-  transition-property: fill, background-color;
+  transition-property: fill, border-color;
   transition-duration: 250ms;
   transition-timing-function: var(--cube);
 }
@@ -1138,7 +1141,7 @@ color: #212121;
 .customers-logo:focus {
   fill:var(--hover-color);
   border-color: var(--hover-color);
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
 
   transform: transition;
 }
@@ -1291,7 +1294,7 @@ color: #212121;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  transition-property: fill, background-color;
+  transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: var(--cube);
   fill: var(--background-color);
@@ -1303,7 +1306,7 @@ color: #212121;
 
 .footer-social-icons-link:hover,
 .footer-social-icons-link:focus {
-  fill: var(--background-color);
+  /* fill: var(--background-color); */
   background: var(--hover-color);
   transform: transition;
 }
@@ -1312,7 +1315,6 @@ color: #212121;
   width: auto;
   margin-left: 0px;
   margin-right: auto;
-  margin-top: 12px;
   display: block;
   justify-content: center;
   align-items: center;
