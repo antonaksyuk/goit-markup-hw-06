@@ -84,7 +84,7 @@ body button:active {
 .navi-bar .link-contact:hover,
 .navi-bar .link-contact:focus {
   color: var(--hover-color);
-  transform: color;
+  /* transform: color; */
 }
 
 .header .container {
@@ -248,7 +248,7 @@ body button:active {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-скрытие заголовка
+/* скрытие заголовка */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -307,13 +307,22 @@ body button:active {
   top: 50%;
   left: 50%;
 
+  display: flex;
+  flex-direction: column;
+  max-width: 528px;
+ 
+  padding: 40px;
+  margin: 0;
+
   min-width: 528px;
-  min-height: 581px;
+ border-radius: 4px;
 
   background-color: rgba(255, 255, 255, 1);
 
   transform: scale(1) translate(-50%, -50%);
   transition: transform 250ms var(--cube);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+  0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .modal-button {
@@ -351,17 +360,7 @@ body button:active {
   object-position: center;
 }
 
-.modal-container {
-  display: flex;
-  flex-direction: column;
-  max-width: 528px;
-  min-height: 581px;
-
-  padding: 40px;
-  margin: 0;
-}
-
-.modal-container .modal-title {
+.modal-title {
   font-family: inherit;
   font-size: 20px;
   font-weight: 700;
@@ -372,7 +371,7 @@ body button:active {
   color: var(--main-color);
 
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 12px;
 }
 
 .form-field {
@@ -388,7 +387,7 @@ body button:active {
 }
 
 .form-field:not(:last-child) {
-margin-bottom: 28px;
+margin-bottom: 10px;
 }
 
 .form-input {
@@ -397,6 +396,7 @@ margin-bottom: 28px;
   height: 40px;
 
   padding-left: 42px;
+  margin-top: 4px;
 
   border-radius: 4px;
 
@@ -418,14 +418,11 @@ margin-bottom: 28px;
 
 .form-field .form-input:hover,
 .form-field .form-input:focus {
-  border: 1px solid var(--hover-color);
+  border-color: var(--hover-color);
+  outline: none;
 }
 
 .form-field .label-name {
-  position: absolute;
-  top: -15px;
-  left: 0;
-
   color: rgba(117, 117, 117, 1);
 
   font-family: inherit;
@@ -439,7 +436,7 @@ margin-bottom: 28px;
 .form-field .label-icon {
   position: absolute;
   left: 12px;
-  top: 14px;
+  top: 30px;
 
   fill: rgba(33, 33, 33, 1);
 
@@ -456,6 +453,7 @@ margin-bottom: 28px;
 .form-field .text-input {
   padding-top: 12px;
   padding-left: 12px;
+  margin-top: 4px;
 
   width: 448px;
   height: 120px;
@@ -492,9 +490,10 @@ margin-bottom: 28px;
 .form-field .text-input:hover,
 .form-field .text-input:focus {
   border-color: var(--hover-color);
+  outline: none;
 }
 
-.field-checkbox {
+.policy {
   position: relative;
 
   display: flex;
@@ -508,11 +507,10 @@ margin-bottom: 28px;
   letter-spacing: 0.03em;
   text-align: left;
 
-  margin-top: 20px;
   margin-bottom: 30px;
 }
 
-.field-checkbox .browser-checkbox {
+.policy .browser-checkbox {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -523,7 +521,7 @@ margin-bottom: 28px;
   overflow: hidden;
 }
 
-.field-checkbox .custom-chechbox {
+.policy .custom-chechbox {
   position: absolute;
   left: 10px;
   top: 3px;
@@ -542,7 +540,13 @@ margin-bottom: 28px;
   transition-timing-function: var(--cube);
 }
 
-.field-checkbox .browser-checkbox:checked + .custom-chechbox {
+.custom-chechbox:hover,
+.custom-chechbox:focus {
+  border-color: var(--hover-color);
+  transform: trasition;
+}
+
+.policy .browser-checkbox:checked + .custom-chechbox {
   background-image: url(../images/icon-check.svg);
   background-position: center;
   background-repeat: no-repeat;
@@ -555,14 +559,14 @@ margin-bottom: 28px;
   fill: var(--hover-color);
 }
 
-.field-checkbox .agreement {
+.policy .agreement {
   display: inline-block;
   margin: 0;
   padding: 0;
   margin-left: 36px;
 }
 
-.field-checkbox .policy-agreement {
+.policy .policy-agreement {
   text-decoration: underline;
   color: var(--hover-color);
 }
@@ -844,13 +848,13 @@ margin-bottom: 28px;
 .social-icons-link:hover,
 .social-icons-link:focus {
   background-color: var(--hover-color);
-  transform: transition;
-}
+ }
 
 .social-icons-link:hover .social-icons-svg,
 .social-icons-link:focus .social-icons-svg{
   fill: var(--background-color);
   transform: transition;
+  transition-duration: 250ms;
 }
 
 .projects {
@@ -1336,6 +1340,7 @@ color: #212121;
 }
 
 .signup-form {
+  display: flex;
   position: relative;
   align-items: center;
 }
@@ -1365,7 +1370,9 @@ color: #212121;
 }
 
 .signup-form .signup-button {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 200px;
   height: 50px;
   margin: 0;
@@ -1387,22 +1394,10 @@ color: #212121;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
-.signup-button::after {
-  content: "";
-  position: absolute;
-  top: 13px;
-  right: 28px;
+.signup-button .send-icon {
   width: 24px;
   height: 24px;
-  background-image: url(../images/icon-send.svg);
-  background-repeat: no-repeat;
-}
-
-.signup-button .icon-send {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  display: block;
+  margin-left: 10px;
   fill: var(--background-color);
 }
-
